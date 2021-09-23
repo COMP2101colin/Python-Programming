@@ -1,0 +1,67 @@
+
+Challenge #1
+
+Step 1	Open the Python IDLE environment and editor. Write a script that accomplishes the following tasks listed below.
+Step 2	Ask the user for their first name, and then store this information.
+Step 3	Ask the user for a number between 1 and 100, and then store this information.
+Step 4	If the number they provided was less than 50, print the number multiplied by 2 with an appropriate message.
+Step 5	If the number they provided was equal to fifty, print the person’s name replicated 7 times.
+Step 6	If the number they provided was greater than 50, print the number squared with an appropriate message.
+Step 7	Print out the number they entered, replicated 5 times.
+
+print("what is your first name")
+firstName=input()
+print("choose any number between 1 to 100")
+anyNumber=int(input())
+if anyNumber<50:
+    print(anyNumber*2)
+elif anyNumber==50:
+    print(firstName*7)
+elif anyNumber>50:
+    print(anyNumber*anyNumber)
+print(str(anyNumber)*5)  
+
+Challenge #2
+
+Step 1	Write a script that asks the user for any positive number.
+Step 2	If the number they provided was even ask the user for another number, keep asking until the user provides an odd number.
+Step 3	Ask the user for another number between 5 and 25 inclusive.  If they provide a number outside this range keep asking until they provide a number within this range.
+Step 4	Concatenate the two numbers and print the number of characters in the concatenated string divided by 3 using floor division.
+
+
+print("choose any positive number")
+positiveNumber=int(input())
+while positiveNumber%2==0:
+    print("please type any positive number")
+    positiveNumber=int(input())
+print("choose any number between 5 and 25")
+anotherNumber=int(input())
+while anotherNumber<5 or anotherNumber>25:
+    print("choose another number between 5 and 25")
+    anotherNumber=int(input())
+concatinate=str(positiveNumber)+str(anotherNumber)
+print(concatinate)
+print(len(concatinate)//3)
+
+Challenge #3
+
+Step 1	Ask the user to pick one of four doors (i.e. door1,door2,door3,door4)
+Step 2	If they choose door1 tell them they have won $10.
+Step 3	If they choose door2 tell them they have won $20.
+Step 4	If they choose door3 tell them they have won $0.
+Step 5	If they choose door4 tell them they have won $100.
+Step 6	If they type anything other than a valid response tell them they owe $100.
+
+
+print("choose any of the four doors")
+chosenDoor=int(input())
+if chosenDoor==1:
+    print('you won $10')
+elif chosenDoor==2:
+    print('you won $20')
+elif chosenDoor==3:
+    print('you won nothing')
+elif chosenDoor==4:
+    print('you won $100')
+else:
+    print('you owe $100')
