@@ -1,0 +1,102 @@
+/#---Challenge #1
+
+Step 1	Open the Python IDLE environment and editor. Write a script that accomplishes the following tasks listed below.
+Step 2	Ask the user for their first name, and then store this information.
+Step 3	Ask the user for a number between 1 and 100, and then store this information.
+Step 4	If the number they provided was less than 50, print the number multiplied by 2 with an appropriate message.
+Step 5	If the number they provided was equal to fifty, print the person’s name replicated 7 times.
+Step 6	If the number they provided was greater than 50, print the number squared with an appropriate message.
+Step 7	Print out the number they entered, replicated 5 times. ---/#
+
+#Display user's first name
+print("what is your first name")
+#Storing the first name
+firstName=input()
+#Displaying any number between 1 and 100
+print("type any number between 1 and 100")
+#Storing any number in integer
+anyNumber=int(input())
+#Using if statement for any number less than 50
+if anyNumber<50:
+    #Printing any number multiplied by 2    
+    print(anyNumber*2)
+#Using elif statement for any number is equal to 50    
+elif anyNumber==50:
+    #Printing first name 7 times    
+    print(firstName*7)
+#Using elif for condition any number is greater than 50    
+elif anyNumber>50:
+    #Printing the squared of any number    
+    print(anyNumber*anyNumber)
+#Replicating the any number number 5 times     
+print(str(anyNumber)*5)
+
+Challenge #2
+
+Step 1	Write a script that asks the user for any positive number.
+Step 2	If the number they provided was even ask the user for another number, keep asking until the user provides an odd number.
+Step 3	Ask the user for another number between 5 and 25 inclusive.  If they provide a number outside this range keep asking until they provide a number within this range.
+Step 4	Concatenate the two numbers and print the number of characters in the concatenated string divided by 3 using floor division.
+
+#Asking for positive number
+print("type any positive number")
+#input positive number
+positiveNumber=int(input())
+#Using while statement for finding even or odd number
+while positiveNumber%2==0:
+    #Asking for positive number again    
+    print("please type positive number")
+    #input positive number    
+    positiveNumber=int(input())
+#Asking another number between 5 and 25     
+print("type another number between 5 and 25")
+#input another number
+anotherNumber=int(input())
+#Using while for the entered number is out of the given range
+while anotherNumber<5 or anotherNumber>25:
+    #Asking again for another number    
+    print("please type another number")
+    #input another number    
+    anotherNumber=int(input())
+#concatination
+concatination=str(positiveNumber)+str(anotherNumber)
+#Printing concatenation
+print(concatination)
+#Printing length of concatination then do floor division of concatination length
+print(len(concatination)//3)
+
+Challenge #3
+
+Step 1	Ask the user to pick one of four doors (i.e. door1,door2,door3,door4)
+Step 2	If they choose door1 tell them they have won $10.
+Step 3	If they choose door2 tell them they have won $20.
+Step 4	If they choose door3 tell them they have won $0.
+Step 5	If they choose door4 tell them they have won $100.
+Step 6	If they type anything other than a valid response tell them they owe $100.
+
+
+#Ask any door from 1 to 4
+print("pick any door from 1 to 4")
+#input chosen door number
+chosenDoor=int(input())
+#Using if statement for choosing door1
+if chosenDoor==1:
+    #Printing the reward fro choosing door 1       
+    print('you have won $10')
+#Using elif statement for door 2    
+elif chosenDoor==2:
+    #Printing the reward for door 2    
+    print('you have won $20')
+#Using elif for door 3    
+elif chosenDoor==3:
+    #Printing reward for doo3    
+    print('you have won nothing')
+#Using elif for door 4    
+elif chosenDoor==4:
+    #Printing reward for door 4    
+    print('you have won $100')
+#Using else statement    
+else:
+    #Printing the reward for other doors out of the range 1 to 4    
+    print('you owe $100')
+    
