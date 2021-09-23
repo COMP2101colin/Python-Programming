@@ -1,0 +1,62 @@
+Instructions:
+1)	Write a function which will take a single string argument.  The purpose of the function is to take a simple URL like “google.com” and turn it into a fully qualified URL : http://google.com then test the URL to ensure it is accessible.  If it is accessible print “URL valid” and return the fully qualified URL to the caller.  If the URL is not accessible, return “ERROR” to the caller.
+2)	Write a second function which will take a single string argument. Based upon the string argument – open the associated web page and read the HTML code of the webpage, append todays date and time to the contents and save it to your computer. 
+3)	Write a third function that will read the first few words of a text file and return them to the caller. (Research variations of the read method.)
+4)	Write a script that asks the user for a simple URL.  If the user does not provide a URL that is accessible, ask them again for a valid URL.  They only get three attempts to provide a valid URL.  After the third failed attempt the program will end with an appropriate message.  If a valid URL is provided write the contents of the webpage to a file, print to the screen the first few words of the file and on another line the message ”File Successfully Saved.”
+
+import urllib.request
+import datetime
+import os
+import sys
+
+def validateURL(simpleURL):
+    fullyQualifiedURL = r"http://" + simpleURL
+    try:
+        webURL = urllib.request.urlopen(fullyQualifiedURL)
+        statusCode = webURL.getcode()
+        if (statusCode == 200):
+            print ("URL valid")
+            return fullyQualifiedURL
+    except Exception:
+        return"ERROR"
+
+
+ 
+def readWebPage(URL):
+    webUrl =urllib.request.urlopen(URL)
+    data=str(webUrl.read())
+    timeStamp = str(datetime.datetime.now())
+    dataToWrite = data + timeStamp
+    if (os.path.exists("C:\\example\\subfolder\\test")==False):
+        os.makedirs("C:\\example\\subfolder\\test")
+    else:
+        testFile = open("C:\\example\\subfolder\\test\\testFile.txt","w")
+        testFile.write(dataToWrite)
+        testFile.close()
+
+
+
+def readFileHeader():
+    fileOne = open("C:\\example\\subfolder\\test\\testFile.txt")
+    fileContent = fileOne.read(100)
+    fileOne.close()
+    return fileContent
+
+
+
+
+
+for i in range(3):
+    print("Please provide a simple URL - such as google.com - you get three attempts")
+    userInputOne = input()
+    returnValue = validateURL(userInputOne)
+    if (returnValue=="ERROR"):
+        continue
+    else:
+        readWebPage(returnValue)
+        print("File successfully saved")
+        firstWords = readFileHeader()
+        print("The first few words of the file are")
+        print(firstWords)
+        break
+sys.exit()
