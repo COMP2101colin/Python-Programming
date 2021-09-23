@@ -1,0 +1,50 @@
+Challenge 1
+Step 1	Generate a random from 10 to 50 inclusive.
+Step 2	Ask the user to guess a number between 10 and 50
+Step 3	If the user guessed the correct number display “You win”.
+Step 4	If the user guessed a number that was too high display “too high, sorry”.
+Step 5	If the user guessed a number that was too low display “too low, sorry”.
+
+Challenge 2
+Step 1	Modify the above script such that the user gets 3 guesses to guess the number, after three guesses the script will exit.
+
+Challenge 3
+Step 1	Modify the above script such that the user must provide a number which is inside the appropriate range.  If the provide a number outside the range they will be continually asked for a number until they provide one which is inside the appropriate range.
+Step 2	Modify the above script such that when the user guesses the correct number that the words “you win” are displayed 7 times every second (without using the sleep function).
+Step 3	Modify the above script such that when the user guesses the correct number that a count will be displayed from 10 to 50 but the number they guessed will be eliminated from the count (that is not displayed).
+
+
+#using import random 
+import random
+#choosing random number from 10 to 50
+randomNumber=(random.randint(10,50))
+#printing random number
+print(randomNumber)
+#asking any number between 10 to 50
+print("please choose number between 10 to 50")
+#input chosen number
+chosenNumber=int(input())
+#using while and not in range statements
+while chosenNumber not in range(10,50):
+    #asking again for choosing number between the given range
+    print("please choose number between 10 to 50")
+    #input chosen number
+    chosenNumber=int(input())
+    
+#using for in range from 0 to 7    
+for i in range(0,7):
+    #printing the statement if its correct
+    print('You win')
+    #using for in range from 0 to 10000000 to waste more time
+    for count in range(0,10000000):
+        #using continue statement
+        continue
+        
+#using for in range from 10 to 50
+for j in range(10,51):
+    #using if for showing condition
+    if j==chosenNumber:
+        #using continue 
+        continue
+    #printing chosen number
+    print(j)
