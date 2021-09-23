@@ -1,0 +1,117 @@
+Challenge 1
+
+Define a function which will take two arguments, both of type string.  The purpose 
+of the function is to return to the caller a random number from 1 to x, where x is  the
+number of characters in both strings added together.  Also the function will print the first
+and second string  separated by three dashes (---) using the “sep” keyword.
+   
+
+Challenge 2
+
+	Define a second function which, when called, will “sleep” for approximately three seconds, and while doing so will display a “z” on the screen about every ½ a second.  Do not use the sleep function to accomplish this task.
+
+ Challenge 3
+	
+	Define a function which will take three int arguments, all of which will be greater than 0 and less than 11 (you do not need to test for this here).  The purpose of the function is to display a count from 1 to 10 with a three second pause between each count with a “Z” being displayed on the screen every ½ a second.  However the count will skip the three numbers passed into the function.
+
+
+
+
+Challenge 4
+
+Step 1	Write a script that will ask the user for two strings.  Display a random number from 1 to x, where x is the number of characters in both strings added together.   
+	
+Step 2	In the same script ask the user for three int values, ensure that each value is  greater than 0 and less than 11 (if the user provides an inappropriate value keep asking until they provide three correct values.)  Display a count from 1 to 10 with a three second pause between each count with a “Z” being displayed on the screen every ½ a second.  However the count will skip the three numbers passed into the function.
+
+Step 3	We know form physics that  Speed = distance / time. Ask the user for the distance they traveled in kilometers and the time it took them in hours.  Use a try block to attempt to calculate the users speed.  If the time provided by the user was zero display the message “You provided an invalid time value” and allow the script  to end, however if the users provides a valid time provide them with their speed along with the correct unit of measure (km per hour). 
+
+
+
+#CH1
+import random
+
+def functionOne(oneNumber,twoNumber):
+    print(random.randint(1,len('oneNumber'+'twoNumber')))
+          
+    print(oneNumber,twoNumber,sep='---')
+
+functionOne('october','april')
+
+#CH2
+def functionTwo():
+
+    for i in range(6):
+        print('z')
+        for count in range(0,30000000):
+            continue            
+functionTwo()
+
+#CH3
+def functionThree(firstNumber,secondNumber,thirdNumber):
+    for j in range(1,11):
+        if(j!=firstNumber and j!=secondNumber and j!=thirdNumber):
+            print(j)
+        else:    
+            continue
+        functionTwo()
+        
+functionThree(2,5,9)
+
+#CH4 S1
+import random
+
+print("please give one string")
+string1=input()
+print("please give another string")
+string2=input()
+
+print(random.randint(1,len('string1'+'string2')))
+          
+print(string1,string2,sep='---')
+
+#CH4 S2
+print("please enter first int value")
+firstValue=int(input())
+print("please enter second int value")
+secondValue=int(input())
+print("please enter third int value")
+thirdValue=int(input())
+
+for k in range(1,11):
+    while (firstValue or secondValue or thirdValue) not in range(1,11):
+        print("please enter first int value")
+        firstValue=int(input())
+        print("please enter second int value")
+        secondValue=int(input())
+        print("please enter third int value")
+        thirdValue=int(input())
+def functionFour():        
+    for k in range(6):
+        print('z')
+        for count in range(0,30000000):
+            continue
+functionFour()
+def functionFive(firstValue,secondValue,thirdValue):
+        for k in range(1,11):
+            if(k!=firstValue and k!=secondValue and k!=thirdValue):
+                print(k)
+            else:    
+                continue
+            functionFour()
+functionFive(firstValue,secondValue,thirdValue)
+
+
+#CH4 S3
+def speed():
+    print("please enter the tarveled distance")
+    distance=int(input())
+    print("please enter the time in hours")
+    time=int(input())
+    try:
+        speed=distance/time
+        print("your speed is",speed,"km per hour")
+    except zeroDivisionError:
+        print('Error: YOu provided an invalid time value.')
+speed()  
+
+     
