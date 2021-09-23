@@ -1,3 +1,17 @@
+#Challenge 1
+Step 1	Create a new file called lab2challenge2.
+Step 2	Ask the user their first name (your sentence should make sense to the user – something like “please enter your first name”)
+Step 3	Capture the user’s first name from the keyboard and assign to an appropriate variable (with an appropriate name).
+Step 4	Ask the user their last name.
+Step 5	Capture the user’s last name from the keyboard and assign to an appropriate variable (with an appropriate name).
+Step 6	Ask the user their lucky number.
+Step 7	Capture the users lucky number from the keyboard and assign to an appropriate variable (with an appropriate name)
+Step 8	Concatenate the first and last name and assign to a third variable.
+Step 9	Multiply the luck number by 10.
+Step 10	Print out the concatenated string.
+Step 11	Print out the number of characters in the concatenated string. 
+Step 12	Print out the lucky number multiplied by 10.
+
 #Printing first name
 print("please type your fisrt name")
 #input first name
@@ -22,6 +36,12 @@ print(numbers)
 multiply=luckyNumber*10
 #Printing multiply
 print(int(multiply))
+
+#Challenge 2
+Step 1	Ask the user for their favourite country.
+Step 2	Print their favourite country 7 times using the replication operator.
+Step 3	Ask the user for any number from 1 to 100.
+Step 4	Use the modulus operator along with the if-else construct (see example below) to determine if the users number was odd or even.  Print an appropriate message to the screen telling the user if their number was odd or even. 
 
 #Writing favourite country
 print("what is your favourite country")
