@@ -1,0 +1,84 @@
+Break/continue
+Break/continue – break statement helps to break the loop from the point where it is written and it used to stop the repetition or execution of the program again and again. The program ends when it will run into break statement
+continue statement helps to repeat the program and the loop starts again. The program will jump back to the start and will execute every line again when it run into the continue statement. 
+while correctWay=door1:
+    print(‘please choose any door’)
+    door=input()
+    if door==door1:
+            break
+            print(‘Bingo! you are on the correct way’)
+    else:
+            continue
+
+Here the code shows that the correctWay is assigned to door1 with while statement. Code will ask the user to choose any door with the print function. After that input() fuction which is assigned to door will let the user choose the he or she wants. If the user selects door1 then the program will get exited from the while loop with the help of break statement and print Bing! You are on the correct way, or if the user chooses different door then the program will start again from the while loop(from beginning) and will re-execute all the condition statements.
+     
+For in range
+The for loop is used with the range() function to make a loop of specific part of code for particular times which is passed in arguments in integer form.
+for i in range(1,61):
+     print(‘‘file is installing, please wait for one minute’’)
+     for count in range(0,7000000):
+           continue
+	Here the code helps to loop over the specific part of the program for specific number of times. In this code, the range function has two arguments from 1 to 61, which helps the code to print a line 60 times, says “file is installing please wait for a minute”. Using for in range second time with the range 0 to 7000000 and after that continue statement will help the code to waste time for around one second while printing the above line for 60 times, which make the user wait for approximately 60 seconds ,  to end the program exactly after one minute.     
+     
+
+User defined function
+User defined functions help users to create their own functions and it is used to avoid the repetition of the same codes everytime. It requires to call a function only if you want to repeat any specific section of the code.
+def functionOne():
+        print(‘please enter an integer number’)
+        intNumber=int(input())
+        if intNumber%2==0:
+              print(‘This number is even.’)
+        else:
+              print(‘This number is odd.’)
+functionOne()
+User defined function helps to make our own functions, using def in front of the function name. The nomenclature of functions is the same as the variable names. After that, this code will ask for an integer number from the keyboard which will be stored in the intNumber variable. If the modulus of the entered number is zero then it will print ‘The number is even’, otherwise it will print ‘The number is odd’ using the if and else statements by giving conditions. Now, to execute the function we need to write parenthesis after the function name which will help to execute the code properly. After calling, the function the program will run. During defining function, we can pass as many arguments as we want in the parenthesis.
+Exception Handling
+Exception handling contains two commands try and except. If the try function run into any problems then the program will immediately move to except part which shows the user about the error with an appropriate message. It used to save the program from crashing.
+def electricPotential():
+    print(‘please enter the power which is used’)
+    power=int(input())
+    print(‘please enter the current which is used’)
+    current= int(input())
+    try:
+             electricPotential=power/current
+             print(electricPotential)
+    except ZeroDivisionError:
+             print(‘Error!! current cannot be zero’)
+electricPotential()
+Here the function of finding electric potential with the help of the physics equation is defined. The function asks user to input power and current value one by one. In the try part if the values which are stored in variable proved wrong, then it will move to the except part and will show the error written ‘Error!! Current cannot be zero’ and our program will end there without crashing. Like this, we can avoid our program by crashing from an error and run smoothly.  
+String Slicing
+String slicing used for showing the specific number of characters from long sentences or lines. 
+print(‘please enter your full name’)
+fullName=input()
+print(fullName[0:3])
+	Here the code asks user to enter his or her full name. It will store the name into the fullName variable. Then printing the fullName. For string slicing, two numbers should be written in the square bracket after the variable name. There is a colon sign ‘:’ in between the two number to get the specific number of characters from the entered name. It is 0:3 here, which means that the code will print the first three characters of the user’s full name after executing the code. If the input name is ‘Johnny Bravo’ then It will show ‘Joh’ as the output of the program.
+String strip methods
+There are three strip functions, which are strip(), lstrip(), and rstrip(). Strip() function with an argument of a character which is first or last in the sentence or word remove it, whereas rstrip() and lstrip() removes the whitespace from front of the word and from the end of the word respectively. 
+print(‘please enter the title of the story’)
+storyName=input()
+print(storyName.strip(‘last or first character of the name’))
+	There are three string strip methods which includes strip(), lstrip() and rstrip(). Here the code asks user to enter the story title, which is stored in the storyName variable. In the print function, variable name is written following the ‘.’ Dot sign which is following the strip() method. In the parenthesis, first or the last character souled be written into the quotation marks, which helps to remove the first or last character from the story title. As an example, if is “fast rabbit” and if ‘f’ is written into the strip function then it will remove the first character{print(storyName.strip(‘f’))} from the title and print ‘ast rabbit’ and if ‘t’ then the last character{print(storyName.strip(‘t’))} will be removed which prints ‘fast rabbi’. If the lstrip() or rstrip() was used then it would remove the whitespace from left and right.
+
+
+Time.time()
+The time.time() command shows the unix epoch time, which is called epoch timestamp. It is used to measure the time between different starting point to ending point.
+import time
+startTime=time.time()
+for i in range(1,61):
+     print(‘‘file is installing, please wait for five minutes’’)
+     for count in range(0,30000000):
+           continue
+endTime=time.time()
+elapsedTime=str(endTime-startTime)
+print(elapsedTime)	
+	Here time.time() function gives the output of epoch timestamp. We have to import the time module first then measure the current time with the help of the time.time() command. Then the for in range command will print “file is running, please wait for five minutes” sixty times by wasting time in between. When it ends to print 60 times printing the line then endTime will capture the time when it finished. Then substracting the ending time from starting time will display the spent time from starting to ending of the program in seconds. The print function will print the spent time around 300 seconds which means 5 minutes. There’s str() used while subtracting starting time from ending time because time is calculated in integer.
+
+Reading spreadsheet files
+
+It is used to read data from a excel spreadsheet and shows the specific box information in the output.
+import openpyxl
+examWorkbook=openpyxl.load_workbook(“c:\\Final Exam”)
+currentSheet=examWorkbook.active
+a=currentSheet[‘C3’]
+print(a.value)
+	Here, we need to import the openpyxl module to run the command properly. Then to indicate the specific excel file from the computer we will write the full path name in the quotation mark which is the brackets of the command openpyxl.workbook(). Then, to active the specific sheet we will write the location of that excel sheet following a dot sign ‘.’ And after that active. After that to print the particular value from the box of spreadsheet, the column and row should be written in quotation mark in big brackets which is assigned to a variable. Finally, to print the box value print function would help us. In the parenthesis, we should write the variable assigned in the previous step fllowing a dot sign ’.’ and then value word itself. It will print the exact C3 box information when the code is executed.
