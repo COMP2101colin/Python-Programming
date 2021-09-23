@@ -1,0 +1,154 @@
+Function 1		(12 points)
+
+Write a function called functionOne which takes three string arguments.  The purpose of the function is to count the number of vowels (including “Y” in the case where there are no other vowels in the word) in each string and return to the caller the string which has the most vowels.   If the “most vowels” occurs in more than one string (i.e. more than one string may have the same number of vowels, which is greater than the number of vowels in the other string, or all strings have the same number of vowels) then all strings are returned to the caller.
+
+#Function 1
+
+def functionOne(stringOne,stringTwo,stringThree):
+
+    x=0
+    y=0
+    z=0
+
+    a=len(stringOne)
+    b=len(stringTwo)
+    c=len(stringThree)
+    for i in range(a):
+        if (stringOne[i]=='a' or stringOne[i]=='e' or stringOne[i]=='i' or stringOne[i]=='o' or stringOne[i]=='u'):
+           x=x+1
+        else:
+            (stringOne[i]=='y')
+            x=x+1
+            
+    for j in range(b):
+        if (stringTwo[j]=='a' or stringTwo[j]=='e' or stringTwo[j]=='i' or stringTwo[j]=='o' or stringTwo[j]=='u'):
+            y=y+1
+        else:
+            (stringTwo[j]=='y')
+            y=y+1
+            
+    for k in range(c):
+        if (stringThree[k]=='a' or stringThree[k]=='e' or stringThree[k]=='i' or stringThree[k]=='o' or stringThree[k]=='u'):
+            z=z+1
+        else:
+            (stringThree[k]=='y')
+            z=z+1
+            
+    if (x>y and x>z):
+        if (x==y or x==z):
+              return(stringOne,stringTwo,stringThree)
+        else:
+              return(stringOne)
+    elif (y>x and y>z):
+        if (y==x or y==z):
+              return(stringOne,stringTwo,stringThree)
+        else:
+              return(stringTwo)
+    elif (z>x and z>y):
+        if (y==x or y==z):
+              return(stringOne,stringTwo,stringThree)
+        else:
+              return(stringThree)
+print(functionOne('california','seattle','nynj'))
+
+Script 1 (This script should be written to test function one, put them after one another with appropriate labels in your final submission)	(3 points)
+
+Write a script that will ask the user for three words.  If the user provides an empty string (that is they hit return without typing a word) ask them again for that string.  Display the word(s) which has the highest number of vowels by invoking function one.  If all three words are returned, display “This is your lucky day – you win $100”.
+
+#Script 1
+
+print("Please type first word")
+firstWord=input()
+print("Please type second word")
+secondWord=input()
+print("Please type third word")
+thirdWord=input()
+
+while (firstWord=="" or secondWord=="" or thirdWord==""):
+    print("Please type first word")
+    firstWord=input()
+    print("Please type second word")
+    secondWord=input()
+    print("Please type third word")
+    thirdWord=input()
+    answer= functionOne(firstWord,secondWord,thirdWord)
+    if answer==(fisrtWord and secondWord and thirdWord):
+         print("This is your lucky day")
+         print("You win $100")
+
+Function 2		(12 points)
+
+Write a function, called functionTwo, that takes no arguments. The purpose of the function is to generate a list of random numbers from 1 to 25 in which every number is used and no number is used twice.  The function will print each number as it is generated and once the entire list is generated it will return the full list to the caller as a single string with a space between each number.
+
+#Function 2
+
+import random
+def functionTwo():
+    randomNumber=random.randint(1,25)
+    randomNumber!=randomNumber
+    for randomNumber in range(1,26):
+        print(randomNumber,end=' ')
+functionTwo()   
+
+Script 2 (This script should be written to test function two, put them after one another with appropriate labels in your final submission)	(6 points)
+
+Write a script that will invoke function two and time how long it takes the function to do it’s job.  Test the return value of the script to confirm that no number appears twice in the list of random numbers.
+
+#Script 2
+
+import random,time
+startTime=time.time()
+def functionTwo():
+    
+    randomNumber=random.randint(1,25)
+    randomNumber!=randomNumber
+    for randomNumber in range(1,26):
+        print(randomNumber,end=' ')
+
+takenTime=functionTwo()
+endTime=time.time()
+elapsedTime=str(endTime-startTime)
+print("It takes"+elapsedTime+"seconds to finish this task")
+
+Function 3		(12 points)
+
+Manually create a spreadsheet with three columns labelled: Date, City, # of Confirmed cases.  Manually populate the columns with 20 rows of data.  Each row will contain a date, a city name and a number.  The next row would contain the same date and a different city name and a different number.  Cycle through each city with the same date (pick 4 cities).  Once every city has been used, cycle through them again increasing the date by one day and increasing the # of confirmed cases to some number larger than the previous number for the same city.
+Here is a partial table as an example:
+
+Date	   City	    # of Confirmed Cases
+April 1	Barrie	      12
+April 1	Toronto	      20
+April 1	Huntsville	  34
+April 1	Orillia	      15
+April 2	Barrie	      15
+April 2	Toronto	      25
+April 2	Huntsville	  38
+April 2	Orillia	      18
+
+Write a function, called functionThree, that takes one argument.  The purpose of the function is to read through the spreadsheet and look for the city corresponding to the argument passed into the function.  Once the city is found print out the row of data for that city keeping all the data on the same line as seen in the spreadsheet.  For example if the city passed in was Barrie the output based upon the above table would have two rows on entries (see below).  Pause for two seconds between each row of data being printed.
+ 
+ #Function 3
+
+import openpyxl
+def wordSearch(findWord):
+    writtenSpreadsheet=openpyxl.load_workbook("c:\\assignment2.xlsx")
+    aSheet=writtenSpreadsheet.active
+    for i in range(1,63):
+        cValue='A'+str(i)
+        aCell=aSheet[cValue]
+        if(aCell.Value==findWord):
+            rValue=cValue
+
+    for i in range(1,63):
+        cValue='B'+str(i)
+        activeCell=aSheet[cValue]
+        if(aCell.Value==findWord):
+            rValue=cValue
+
+    for i in range(1,63):
+        cValue='C'+str(i)
+        aCell=aSheet[cValue]
+        if(aCell.Value==findWord):
+            rValue=cValue
+
+    return rValue      
