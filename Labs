@@ -1,0 +1,42 @@
+#Printing first name
+print("please type your fisrt name")
+#input first name
+firstName=input()
+#Printing last name
+print("please type your last name")
+#input last name
+lastName=input()
+#Printing lucky number
+print("what is your lucky Number")
+#input lucky number
+luckyNumber=input()
+#Concatenating first name and last name
+fullName=firstName+lastName
+#printing full name
+print(fullName)
+#Counting length of full name
+numbers=len(fullName)
+#Printing numbers
+print(numbers)
+#Multiplying luck number by 10
+multiply=luckyNumber*10
+#Printing multiply
+print(int(multiply))
+
+#Writing favourite country
+print("what is your favourite country")
+#input favourite country
+favouriteCountry=input()
+#Printing favourite country 7 times with replicator operator so we don't need to put int
+print(favouriteCountry*7)
+#Choosing any number from 1 to 100
+print("choose any number from 1 to 100")
+#input choosen number
+choosenNumber=int(input())
+#Using modulus operator with if-else construct
+if choosenNumber%2==0:
+    #printing if construct
+    print("choosenNumber is even")
+else:
+    #printing else construct
+    print("choosenNumber is odd")
