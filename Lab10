@@ -1,0 +1,45 @@
+Instructions:
+1.	Manually create an excel file in which there are 100 unique words in each of four columns of the spreadsheet. (therefore a total of 400 unique words)
+2.	Write a function which will take a single string argument.  The purpose of the function is to read each cell of the spreadsheet which contains information, and search for the word passed into the function as an argument.  Once the word is found the function will return to the caller the coordinates of the cell (row and column) in which the word was found.
+3.	Write a script which will ask the user for a single word and will print the coordinates of where the word is found in the spreadsheet with an appropriate message.  If the word was not found print an appropriate message.
+
+import openpyxl
+
+def spreadSheetWordSearch(wordToSearch):
+    workingSpreadsheet = openpyxl.load_workbook("c:\\Georgian College\\COMP1099\\400_unique_words.xlsx")                             
+    activeSheet = workingSpreadsheet.active
+    returnValue = "no word found"
+    for i in range (1,101):
+        cellValue = 'A' + str(i)
+        activeCell = activeSheet[cellValue]
+        if (activeCell.value == wordToSearch):
+            returnValue = cellValue
+
+    for i in range (1,101):
+        cellValue = 'B' + str(i)
+        activeCell = activeSheet[cellValue]
+        if (activeCell.value == wordToSearch):
+            returnValue = cellValue
+
+    for i in range (1,101):
+        cellValue = 'C' + str(i)
+        activeCell = activeSheet[cellValue]
+        if (activeCell.value == wordToSearch):
+            returnValue = cellValue
+
+    for i in range (1,101):
+        cellValue = 'D' + str(i)
+        activeCell = activeSheet[cellValue]
+        if (activeCell.value == wordToSearch):
+            returnValue = cellValue
+            
+    return returnValue
+
+
+print("Please enter a word and I will attempt to find the word in the spreadsheet")
+userWord = input()
+coordinates = spreadSheetWordSearch(userWord)
+if (coordinates == "no word found"):
+    print("Sorry that word was not in the spreadsheet")
+else:
+    print("I found that word, it was located at " + coordinates)  
