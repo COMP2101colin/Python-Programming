@@ -1,0 +1,33 @@
+Instructions:
+o	Ask the user to type in a sentence that is at least 5 words long.
+o	Print the number of characters in the sentence along with an appropriate message – (Example: The number of characters in your sentence is: X)
+o	Print out the 5th character of the sentence along with an appropriate message. (follow above example)
+o	Print out characters 3 to 7 of the sentence along with an appropriate message. (follow above example)
+o	Print True, along with an appropriate message. (follow above example) if the sentence contains the word Hello.
+o	Reprint the sentence in all upper case letters.
+o	Print True, along with an appropriate message. (follow above example) if the sentence starts with Hello.
+o	Re-print the sentence right justified.
+o	Write a function that will return the word passed into it in reverse order. For example if you pass in Hello it will return olleH.  Use only loops, do not use [: :-1]
+o	Write code to ask the user for a word to test the above function.
+
+
+print("please enter 5 words sentence")
+sentence=input()
+x=len(sentence)
+print('The number of characters in your sentence is',x)
+print('The 5th character of the sentence is',sentence[5])
+print('Characters from 3 to 7 are',sentence[2:7])
+print('This sentence is','Hello' in sentence)
+print(sentence.upper())
+print('This sentence is',sentence.startswith('Hello'))
+print(sentence.rjust(25))
+
+def functionOne():
+    string=''
+    print("please enter 5 words sentence")
+    line=input()
+    a=len(line)
+    for i in range(a-1,-1,-1):
+        string=string+line[i]
+    print(string)
+functionOne()
