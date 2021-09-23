@@ -1,0 +1,33 @@
+Create a python script that will ask the user for four separate pieces of information using appropriate messaging for each piece of information:  First Name, Last Name, Employee ID, Date of Birth. (capture each piece of information separately)  Confirm that the employee ID is an all numerical entry, otherwise ask the user to re-enter this information.  Once all the data is captured, save the information in a file as separate lines of information.  Save the file in the following location – c:\python\assignment7
+Read the file back and print its contents in the terminal window.
+
+
+import os
+print("please type your first name")
+firstName=input()
+print("Your first name is " + firstName)
+print("please type your last name")
+lastName=input()
+print("Your last name is " + lastName)
+print("please enter your employer ID")
+eId=input()
+while eId.isdecimal()!=True:
+    print("Please type your employer ID in numricals")
+    eId=input()
+print("Your employer ID is " + eId)    
+print("please enter your date of birth")
+dateOfBirth=input()
+print("Your date of birth is " + dateOfBirth)
+os.makedirs("c:\\python4")
+fileOne=open('c:\\python4\\assignment7.txt','w+')
+fileOne.write(firstName)
+fileOne.write('\n')
+fileOne.write(lastName)
+fileOne.write('\n')
+fileOne.write(eId)
+fileOne.write('\n')
+fileOne.write(dateOfBirth)
+fileOne.close()
+fileOne=open('c:\\python4\\assignment7.txt')
+fileContent=fileOne.read()
+print(fileContent)
