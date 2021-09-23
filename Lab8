@@ -1,0 +1,49 @@
+Instructions:
+1)	Create a .txt file of at least 1000 words and save on your hard drive. (You can find text online – be sure there are no hidden formatting characters – to do this save the file in notepad first)
+2)	Create a function that will take no arguments.  The purpose of the function is to generate a random word from a list of five words that you make up.   Return the random word to the caller.
+3)	Create a second function which will take one string argument.  The purpose of the function is to search the text file created in step one, and determine how many occurrences of the argument passed into the function occur in the file.  Return the number of occurrences to the caller along with the word “high”, “medium” , “low” or “none” based upon the number of hits received-  0 = none, 1-5 low, 6-10 medium, 11+ high.  (Google the string methods available to determine the best method to solve this problem).
+4)	Write a script which will call the appropriate methods to find how many occurrences of a random word occurs in the text file.  Print out the number of occurrences and keyword (with an appropriate message) along with the length of time it took to complete the search – with an appropriate message.
+
+import random, time
+def randomWordGenerator():
+  randomWord = ""
+  randomNumber=random.randint(1,5)
+  if (randomNumber == 1):
+    randomWord = "boat"
+  elif (randomNumber == 2):
+    randomWord = "ice"
+  elif (randomNumber == 3):
+    randomWord = "pencil"
+  elif (randomNumber == 4):
+    randomWord = "water"
+  elif (randomNumber == 5):
+    randomWord = "paper"
+  return randomWord
+
+
+
+def countWords(word):
+    wordCount = 0
+    fileOne=open("C:\\Georgian College\\COMP1099\\onethousandwords.txt")
+    fileContent=fileOne.read()
+    fileOne.close()
+    wordCount=fileContent.count(word)
+       
+    if wordCount==0:
+        return(str(wordCount) + " hits: " + "(None)")
+    elif wordCount > 0 and wordCount < 6:
+        return(str(wordCount) + " hit(s): " + "(low)")
+    elif wordCount > 5 and wordCount < 11:
+        return(str(wordCount) + " hits: " + "(medium)")
+    elif wordCount > 10:
+        return(str(wordCount) + " hits: " + "(high)")
+
+    
+startTime = time.time()
+wordToFind = randomWordGenerator()
+print("The random word I am looking for is " + wordToFind)
+print(countWords(wordToFind))
+endTime = time.time()
+elapsedTime = str(endTime-startTime)
+print("It took me " + elapsedTime + " seconds to count how many times the word " + "\"" +wordToFind + "\"" + " was contained in a list of 1000 words!")
+
